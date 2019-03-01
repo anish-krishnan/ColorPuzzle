@@ -25,17 +25,28 @@ class GameViewController: UIViewController{
     
     var gameLogic = GameLogic.init(score: -1)
     
-    var gameInt = 10
+    var gameInt = 10.0
     var gameTimer = Timer()
     
-   
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        // Show the Navigation Bar
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        // Hide the Navigation Bar
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUIElements()
         
         timeLabel.text = String(gameInt)
         
-        gameTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(GameViewController.game), userInfo: nil, repeats: true)
+        gameTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(GameViewController.game), userInfo: nil, repeats: true)
 
     }
     
@@ -58,11 +69,15 @@ class GameViewController: UIViewController{
         scoreLabel.text = String(gameLogic.score)
     }
     
+    func gameOver(){
+        performSegue(withIdentifier: "gameOverSegue", sender: self)
+    }
+    
     @objc func game() {
-        gameInt -= 1
-        timeLabel.text = String(gameInt)
+        gameInt -= 0.1
+        timeLabel.text = String(format: "%.01f", gameInt)
         
-        if gameInt == 0 {
+        if gameInt <= 0.0 {
             
             gameTimer.invalidate()
             
@@ -71,36 +86,33 @@ class GameViewController: UIViewController{
             button1.isEnabled = false
             button2.isEnabled = false
             button3.isEnabled = false
+            gameOver()
             
         }
     }
     
-    @IBAction func clickedButton1(_ sender: UIButton) {
-        if(gameLogic.buttonColors[1] == colorLabel.text){
+    
+    func handleButtonClick(buttonNumber: Int){
+        if(gameLogic.buttonColors[buttonNumber] == colorLabel.text){
+            gameInt += 1.0
             gameLogic.updateTurn()
             updateUIElements()
         } else{
             colorLabel.text = "GAME OVER"
+            gameOver()
         }
+    }
+    
+    @IBAction func clickedButton1(_ sender: UIButton) {
+        handleButtonClick(buttonNumber: 1)
     }
     
     @IBAction func clickedButton2(_ sender: UIButton) {
-        if(gameLogic.buttonColors[2] == colorLabel.text){
-            gameLogic.updateTurn()
-            updateUIElements()
-        } else{
-            colorLabel.text = "GAME OVER"
-        }
+        handleButtonClick(buttonNumber: 2)
     }
     
     @IBAction func clickedButton3(_ sender: UIButton) {
-        if(gameLogic.buttonColors[3] == colorLabel.text){
-            gameLogic.updateTurn()
-            updateUIElements()
-        } else{
-            colorLabel.text = "GAME OVER"
-        }
-        
+        handleButtonClick(buttonNumber: 3)
     }
     
 }
