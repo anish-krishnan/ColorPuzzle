@@ -15,11 +15,12 @@ class GameViewController: UIViewController{
 
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var colorLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var button1: UIButton!
     @IBOutlet weak var button2: UIButton!
-    @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var button3: UIButton!
-
+    @IBOutlet weak var button4: UIButton!
+    
     
     var buttons:[UIButton] = []
     
@@ -55,7 +56,7 @@ class GameViewController: UIViewController{
     }
     
     func updateUIElements(){
-        buttons = [button1, button2, button3]
+        buttons = [button1, button2, button3, button4]
         //Update label text and color
         
         colorLabel.text = gameLogic.labelText
@@ -115,4 +116,7 @@ class GameViewController: UIViewController{
         handleButtonClick(buttonNumber: 3)
     }
     
+    @IBAction func clickedButton4(_ sender: UIButton) {
+        handleButtonClick(buttonNumber: 4)
+    }
 }
