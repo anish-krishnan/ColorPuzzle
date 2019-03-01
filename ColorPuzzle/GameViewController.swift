@@ -8,23 +8,35 @@
 
 import Foundation
 import UIKit
+//import SKAction
 
 class GameViewController: UIViewController{
     
 
-    
+    @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var colorLabel: UILabel!
     @IBOutlet weak var button1: UIButton!
     @IBOutlet weak var button2: UIButton!
+    @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var button3: UIButton!
+
     
     var buttons:[UIButton] = []
     
-    var gameLogic = GameLogic.init(score: 0)
+    var gameLogic = GameLogic.init(score: -1)
     
+    var gameInt = 10
+    var gameTimer = Timer()
+    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUIElements()
+        
+        timeLabel.text = String(gameInt)
+        
+        gameTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(GameViewController.game), userInfo: nil, repeats: true)
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -41,6 +53,25 @@ class GameViewController: UIViewController{
         //Update button colors
         for (button, color) in gameLogic.buttonColors{
             buttons[button-1].backgroundColor = gameLogic.COLOR_MAP[color]
+        }
+        
+        scoreLabel.text = String(gameLogic.score)
+    }
+    
+    @objc func game() {
+        gameInt -= 1
+        timeLabel.text = String(gameInt)
+        
+        if gameInt == 0 {
+            
+            gameTimer.invalidate()
+            
+            colorLabel.textColor = UIColor.red
+            colorLabel.text = "Time's up"
+            button1.isEnabled = false
+            button2.isEnabled = false
+            button3.isEnabled = false
+            
         }
     }
     

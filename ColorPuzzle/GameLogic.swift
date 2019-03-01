@@ -14,7 +14,10 @@ class GameLogic{
     
     let COLOR_LIST: [String] = ["BLUE", "GREEN", "RED"]
     
-    let COLOR_MAP:[String:UIColor] = ["BLUE":UIColor.blue, "GREEN":UIColor.green, "RED":UIColor.red]
+    let COLOR_MAP:[String:UIColor] =
+        ["BLUE":UIColor(red: 30/255, green: 136/255, blue: 229/255, alpha: 1),
+         "GREEN":UIColor(red: 101/255, green: 186/255, blue: 105/255, alpha: 1),
+         "RED":UIColor(red: 244/255, green: 67/255, blue: 48/255, alpha: 1)]
     
     var buttonColors:[Int:String] = [1:"One", 2:"Two", 3:"Three"]
     var labelText = "BLUE"
