@@ -20,12 +20,15 @@ class GameViewController: UIViewController{
     @IBOutlet weak var button2: UIButton!
     @IBOutlet weak var button3: UIButton!
     @IBOutlet weak var button4: UIButton!
+    @IBOutlet var circleTimer: UIView!
     
+    var circleTimerView = CircleTimer()
     
     var buttons:[UIButton] = []
     
     var gameLogic = GameLogic.init(score: -1)
     
+    let totalTime = 10.0
     var gameInt = 10.0
     var gameTimer = Timer()
     
@@ -43,11 +46,11 @@ class GameViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        CircleTimer.currentAngle = 20
         updateUIElements()
-        
         timeLabel.text = String(gameInt)
         
-        gameTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(GameViewController.game), userInfo: nil, repeats: true)
+        gameTimer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(GameViewController.game), userInfo: nil, repeats: true)
 
     }
     
@@ -62,6 +65,8 @@ class GameViewController: UIViewController{
         colorLabel.text = gameLogic.labelText
         colorLabel.textColor = gameLogic.labelColor
         
+        CircleTimer.circleColor = colorLabel.textColor
+        
         //Update button colors
         for (button, color) in gameLogic.buttonColors{
             buttons[button-1].backgroundColor = gameLogic.COLOR_MAP[color]
@@ -75,7 +80,9 @@ class GameViewController: UIViewController{
     }
     
     @objc func game() {
-        gameInt -= 0.1
+        CircleTimer.currentAngle = Float(((gameInt/totalTime) * 360) - 450)
+        circleTimer.setNeedsDisplay()
+        gameInt -= 0.01
         timeLabel.text = String(format: "%.01f", gameInt)
         
         if gameInt <= 0.0 {
