@@ -10,9 +10,11 @@ import Foundation
 import UIKit
 //import SKAction
 
+
 class GameViewController: UIViewController{
     
-
+    
+    @IBOutlet weak var highScoreLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var colorLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
@@ -81,6 +83,7 @@ class GameViewController: UIViewController{
         }
         
         scoreLabel.text = String(gameLogic.score)
+        highScoreLabel.text = "High Score: \(gameLogic.high_score)"
     }
     
     func gameOver(){
