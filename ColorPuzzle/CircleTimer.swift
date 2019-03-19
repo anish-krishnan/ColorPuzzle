@@ -12,9 +12,9 @@ import GLKit
 
 class CircleTimer: UIView{
     // MARK: Properties
-    let centerX:CGFloat = 55
-    let centerY:CGFloat = 55
-    let radius:CGFloat = 50
+    static var centerX:CGFloat = 55 //CircleTimer.bounds.size.width
+    static var centerY:CGFloat = 55
+    static var radius:CGFloat = 50
     
     static var currentAngle:Float = -90
     static var circleColor = UIColor.blue
@@ -53,11 +53,11 @@ class CircleTimer: UIView{
         
         let path = CGMutablePath() //.init() ??
         
-        let centerPoint: CGPoint = CGPoint(x: centerX, y: centerY)
+        let centerPoint: CGPoint = CGPoint(x: CircleTimer.centerX, y: CircleTimer.centerY)
         
 //        CGPathAddArc(path, nil, centerX, centerY, radius, -CGFloat(M_PI/2), CGFloat(GLKMathDegreesToRadians(currentAngle)), false)
 
-        path.addArc(center: centerPoint, radius: radius, startAngle: -CGFloat(Double.pi/2), endAngle: CGFloat(GLKMathDegreesToRadians(CircleTimer.currentAngle)), clockwise: false)
+        path.addArc(center: centerPoint, radius: CircleTimer.radius, startAngle: -CGFloat(Double.pi/2), endAngle: CGFloat(GLKMathDegreesToRadians(CircleTimer.currentAngle)), clockwise: false)
         
         
         

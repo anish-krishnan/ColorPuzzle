@@ -24,8 +24,7 @@ class GameViewController: UIViewController{
     @IBOutlet weak var button4: UIButton!
     @IBOutlet var circleTimer: UIView!
     
-    var circleTimerView = CircleTimer()
-    
+
     var buttons:[UIButton] = []
     
     var gameLogic = GameLogic.init(score: -1)
@@ -39,6 +38,9 @@ class GameViewController: UIViewController{
         super.viewWillAppear(true)
         // Show the Navigation Bar
         self.navigationController?.setNavigationBarHidden(true, animated: true)
+        print("HAHHAHAH: viewWillAppear")
+        CircleTimer.currentAngle = 20
+        updateUIElements()
 
     }
     
@@ -54,6 +56,10 @@ class GameViewController: UIViewController{
         updateUIElements()
         timeLabel.text = String(gameInt)
         
+        CircleTimer.centerX = circleTimer.bounds.size.width/2
+        CircleTimer.centerY = circleTimer.bounds.size.height/4
+        CircleTimer.radius = circleTimer.bounds.size.width/3
+
         gameTimer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(GameViewController.game), userInfo: nil, repeats: true)
 
     }
@@ -81,6 +87,7 @@ class GameViewController: UIViewController{
     }
     
     func gameOver(){
+        gameInt = 0.0
         performSegue(withIdentifier: "gameOverSegue", sender: self)
     }
     
