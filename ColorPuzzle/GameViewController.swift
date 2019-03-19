@@ -83,7 +83,6 @@ class GameViewController: UIViewController{
         }
         
         scoreLabel.text = String(gameLogic.score)
-        highScoreLabel.text = "High Score: \(gameLogic.high_score)"
     }
     
     func gameOver(){
