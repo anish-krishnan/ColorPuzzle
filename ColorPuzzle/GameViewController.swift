@@ -37,6 +37,7 @@ class GameViewController: UIViewController{
         super.viewWillAppear(true)
         // Show the Navigation Bar
         self.navigationController?.setNavigationBarHidden(true, animated: true)
+        print("HAHHAHAH")
 
     }
     
@@ -51,7 +52,7 @@ class GameViewController: UIViewController{
         CircleTimer.currentAngle = 20
         updateUIElements()
         timeLabel.text = String(gameInt)
-        
+
         gameTimer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(GameViewController.game), userInfo: nil, repeats: true)
 
     }
