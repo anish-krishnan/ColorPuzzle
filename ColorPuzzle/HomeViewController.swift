@@ -15,6 +15,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var color_button2: UIButton!
     @IBOutlet weak var color_button3: UIButton!
     @IBOutlet weak var color_button4: UIButton!
+    @IBOutlet weak var highScoreLabel: UILabel!
     
     var color_buttons: [UIButton] = []
     var ui_colors: [UIColor] = []
@@ -29,6 +30,8 @@ class HomeViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         flashing_timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(HomeViewController.lights), userInfo: nil, repeats: true)
+        
+        highScoreLabel.text = "High Score: " + String(UserDefaults.standard.integer(forKey: "HighScore"))
     }
     
     @objc func lights() {

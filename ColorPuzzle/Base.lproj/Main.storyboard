@@ -55,7 +55,7 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="esS-xS-XVa">
-                                <rect key="frame" x="170" y="262" width="34" height="30"/>
+                                <rect key="frame" x="170" y="318" width="34" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Start"/>
                                 <connections>
@@ -63,6 +63,13 @@
                                     <segue destination="ULg-yy-Whg" kind="show" id="nju-XE-9TD"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uLH-6W-VVg">
+                                <rect key="frame" x="92" y="251" width="203" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -73,6 +80,7 @@
                         <outlet property="color_button2" destination="1wj-9t-RUC" id="31c-Hl-VVO"/>
                         <outlet property="color_button3" destination="Ne6-30-eyl" id="3I8-XL-sCY"/>
                         <outlet property="color_button4" destination="Az4-zk-sK9" id="3hK-4P-RPs"/>
+                        <outlet property="highScoreLabel" destination="uLH-6W-VVg" id="0Jp-m8-rc0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -262,8 +270,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="tKy-Qo-31X"/>
-        <segue reference="EtZ-Hx-TLj"/>
+        <segue reference="nju-XE-9TD"/>
         <segue reference="Enc-Cm-Z7R"/>
     </inferredMetricsTieBreakers>
 </document>
