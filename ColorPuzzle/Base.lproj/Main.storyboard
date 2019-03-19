@@ -115,8 +115,8 @@
                                     <action selector="clickedButton3:" destination="ULg-yy-Whg" eventType="touchUpInside" id="1g6-Vl-p8h"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMx-JA-M9B">
-                                <rect key="frame" x="40" y="60" width="43" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMx-JA-M9B">
+                                <rect key="frame" x="40" y="73" width="43" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -143,8 +143,22 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pqr-yR-eeV">
-                                <rect key="frame" x="301" y="60" width="34" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3EE-Fd-lYW">
+                                <rect key="frame" x="40" y="89" width="0.0" height="0.0"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w7R-PS-Qeg">
+                                <rect key="frame" x="40" y="44" width="170" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pqr-yR-eeV">
+                                <rect key="frame" x="301" y="73" width="34" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -178,6 +192,7 @@
                         <outlet property="button4" destination="mmX-zY-8D9" id="5gz-hR-NfY"/>
                         <outlet property="circleTimer" destination="cfs-fy-oLH" id="tji-YK-Hcx"/>
                         <outlet property="colorLabel" destination="cfn-dN-dhV" id="y9M-AX-X95"/>
+                        <outlet property="highScoreLabel" destination="w7R-PS-Qeg" id="eyG-UC-run"/>
                         <outlet property="scoreLabel" destination="eMx-JA-M9B" id="tRh-qt-Jks"/>
                         <outlet property="timeLabel" destination="pqr-yR-eeV" id="kit-1W-MYN"/>
                         <segue destination="Mmj-VK-PVA" kind="presentation" identifier="gameOverSegue" animates="NO" id="tKy-Qo-31X"/>
@@ -247,8 +262,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-
-        <segue reference="nju-XE-9TD"/>
+        <segue reference="tKy-Qo-31X"/>
+        <segue reference="EtZ-Hx-TLj"/>
         <segue reference="Enc-Cm-Z7R"/>
     </inferredMetricsTieBreakers>
 </document>
