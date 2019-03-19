@@ -20,6 +20,7 @@ class GameLogic{
          "RED":UIColor(red: 244/255, green: 67/255, blue: 48/255, alpha: 1),
          "YELLOW":UIColor(red: 255/255, green: 179/255, blue: 0/255, alpha: 1)]
     
+    var high_score: Int = UserDefaults.standard.integer(forKey: "HighScore")
     var buttonColors:[Int:String] = [1:"One", 2:"Two", 3:"Three", 4:"Four"]
     var labelText = "BLUE"
     var labelColor : UIColor = UIColor.red
@@ -47,6 +48,10 @@ class GameLogic{
         self.labelText = COLOR_LIST.randomElement()!
         self.labelColor = self.COLOR_MAP[self.COLOR_LIST.randomElement()!]!
         
+        if score > high_score {
+            high_score = score
+            UserDefaults.standard.set(high_score, forKey: "HighScore")
+        }
     }
     
     init(score: Int){
