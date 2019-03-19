@@ -32,10 +32,12 @@ class GameViewController: UIViewController{
     var gameInt = 10.0
     var gameTimer = Timer()
     
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         // Show the Navigation Bar
         self.navigationController?.setNavigationBarHidden(true, animated: true)
+
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -101,6 +103,7 @@ class GameViewController: UIViewController{
     
     
     func handleButtonClick(buttonNumber: Int){
+        CircleTimer.currentAngle = Float(((gameInt/totalTime) * 360) - 450)
         if(gameLogic.buttonColors[buttonNumber] == colorLabel.text){
             gameInt += 1.0
             gameLogic.updateTurn()
