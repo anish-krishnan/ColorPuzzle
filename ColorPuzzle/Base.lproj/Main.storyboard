@@ -22,8 +22,8 @@
                                 <rect key="frame" x="195" y="171" width="30" height="30"/>
                                 <color key="backgroundColor" red="0.2469175159" green="1" blue="0.28875397759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1wj-9t-RUC">
-                                <rect key="frame" x="241" y="322" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1wj-9t-RUC">
+                                <rect key="frame" x="241" y="171" width="30" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </button>
@@ -63,7 +63,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="esS-xS-XVa">
-                                <rect key="frame" x="170" y="338.5" width="35" height="178"/>
+                                <rect key="frame" x="0.0" y="360.5" width="375" height="256.5"/>
                                 <state key="normal" title="Start"/>
                                 <connections>
                                     <action selector="clickedStart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EiI-iO-vrv"/>
@@ -82,23 +82,23 @@
                             <constraint firstItem="1wj-9t-RUC" firstAttribute="leading" secondItem="Ne6-30-eyl" secondAttribute="trailing" constant="46" id="EJF-e0-9PT"/>
                             <constraint firstItem="uLH-6W-VVg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="92" id="Gz5-4P-Mma"/>
                             <constraint firstItem="uLH-6W-VVg" firstAttribute="top" secondItem="Az4-zk-sK9" secondAttribute="bottom" constant="65" id="ICr-Za-6Vi"/>
+                            <constraint firstItem="esS-xS-XVa" firstAttribute="top" secondItem="uLH-6W-VVg" secondAttribute="bottom" constant="50" id="JZr-bA-Alg"/>
                             <constraint firstItem="1wj-9t-RUC" firstAttribute="trailing" secondItem="uLH-6W-VVg" secondAttribute="trailing" id="Kos-0E-vcC"/>
                             <constraint firstItem="1wj-9t-RUC" firstAttribute="firstBaseline" secondItem="Az4-zk-sK9" secondAttribute="firstBaseline" id="LQb-Um-odB"/>
                             <constraint firstItem="Ne6-30-eyl" firstAttribute="top" secondItem="S7e-cL-gtm" secondAttribute="top" id="PYe-xA-PTz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="esS-xS-XVa" secondAttribute="bottom" constant="50" id="Wby-vW-VlO"/>
                             <constraint firstItem="1wj-9t-RUC" firstAttribute="firstBaseline" secondItem="Ne6-30-eyl" secondAttribute="firstBaseline" id="WlL-f0-vu4"/>
                             <constraint firstItem="JNr-8X-gI7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="YDI-xN-6pm"/>
-                            <constraint firstItem="esS-xS-XVa" firstAttribute="centerY" secondItem="uLH-6W-VVg" secondAttribute="centerY" constant="139.25" id="aso-Oz-1us"/>
                             <constraint firstItem="1wj-9t-RUC" firstAttribute="firstBaseline" secondItem="S7e-cL-gtm" secondAttribute="firstBaseline" id="bty-v9-CJd"/>
                             <constraint firstItem="Az4-zk-sK9" firstAttribute="top" secondItem="Ne6-30-eyl" secondAttribute="top" id="ckD-bv-7EG"/>
                             <constraint firstItem="Az4-zk-sK9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="87" id="dtz-ka-Qk4"/>
-                            <constraint firstItem="esS-xS-XVa" firstAttribute="top" secondItem="uLH-6W-VVg" secondAttribute="bottom" constant="28" id="fEi-1s-gPa"/>
-                            <constraint firstItem="esS-xS-XVa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="170" id="gPB-2t-TfN"/>
+                            <constraint firstItem="esS-xS-XVa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gPB-2t-TfN"/>
                             <constraint firstItem="Az4-zk-sK9" firstAttribute="firstBaseline" secondItem="S7e-cL-gtm" secondAttribute="firstBaseline" id="iVS-jW-5fD"/>
                             <constraint firstItem="S7e-cL-gtm" firstAttribute="top" secondItem="1wj-9t-RUC" secondAttribute="top" id="ovs-dE-kLQ"/>
                             <constraint firstItem="Az4-zk-sK9" firstAttribute="baseline" secondItem="S7e-cL-gtm" secondAttribute="baseline" id="qIg-Cc-ZB4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="esS-xS-XVa" secondAttribute="trailing" id="rOt-Dw-ObK"/>
                             <constraint firstItem="1wj-9t-RUC" firstAttribute="baseline" secondItem="Az4-zk-sK9" secondAttribute="baseline" id="rtL-au-wQi"/>
                             <constraint firstItem="Ne6-30-eyl" firstAttribute="leading" secondItem="Az4-zk-sK9" secondAttribute="trailing" id="sFI-h1-MfI"/>
-                            <constraint firstItem="esS-xS-XVa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sGM-aW-AXa"/>
                             <constraint firstItem="JNr-8X-gI7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="sUy-sK-eNm"/>
                             <constraint firstItem="Az4-zk-sK9" firstAttribute="baseline" secondItem="Ne6-30-eyl" secondAttribute="baseline" id="tYA-A6-ZI4"/>
                             <constraint firstItem="Az4-zk-sK9" firstAttribute="top" secondItem="JNr-8X-gI7" secondAttribute="bottom" constant="50" id="yJf-yR-cCw"/>
