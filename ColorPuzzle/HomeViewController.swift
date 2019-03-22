@@ -25,6 +25,10 @@ class HomeViewController: UIViewController {
     @IBAction func clickedStart(_ sender: UIButton) {
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
